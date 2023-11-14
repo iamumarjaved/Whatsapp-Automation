@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp Reader</title>
+</head>
+<body>
+    <h1>WhatsApp Reader</h1>
+    <p>Number of unread chats: {{ number }}</p>
+    <ul>
+        {% for chat in unread_chats_data %}
+        <li>
+            <h2>{{ chat.chat_name }} ({{ chat.unread_messages }} unread messages)</h2>
+            {% if chat.last_unread_messages %}
+            <ul>
+                {% for message in chat.last_unread_messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No Matched message.</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

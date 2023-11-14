@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>Whatsapp Automation</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Whatsapp Automation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+  </nav>
+  <div class="container mt-5">
+        {#  create 2 buttons  #}
+    <div class="row">
+            <a class="btn btn-primary btn-lg btn-block" href="{% url 'whatsappsend:send_attached' %}" title="You give only numbers in CSV file and it send message and image to all numbers in CSV files. Please note that CSV file should contains numbers only without any text">Send Message Instantly</a>
+    </div>
+    <div class="row" style="padding-top: 5px;">
+            <a class="btn btn-primary btn-lg btn-block" href="{% url 'whatsappsend:read_whatsapp' %}" title="You give input string and if found it will send that message and image to that chat ( Currently Working for JPEG images only)">Send Message by Match</a>
+    </div>
+    <div class="row" style="padding-top: 5px;" title="You can send multiple Messages with Input strings and when the input string is matched it will send that response message.">
+            <a class="btn btn-primary btn-lg btn-block" href="{% url 'whatsappsend:bulk_text' %}">Send Messages in Bulk</a>
+  </div>
+    <div class="row" style="padding-top: 5px;" title="Send the certain Response to all unread Chats.">
+            <a class="btn btn-primary btn-lg btn-block" href="{% url 'whatsappsend:unread_response' %}">Send Response to all unread Chats</a>
+    </div>
+{#      <div class="row" style="padding-top: 5px;" title="Download the first image of every chat (read or unread).">#}
+{#            <a class="btn btn-primary btn-lg btn-block" href="{% url 'whatsappsend:download_image' %}">Download First image of chats</a>#}
+{#    </div>#}
+
+
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlb"></script>
+
+</body>
+</html>
